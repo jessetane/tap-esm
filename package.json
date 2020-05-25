@@ -1,0 +1,15 @@
+{
+  "name": "tap6",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "TAP for es6",
+  "scripts": {
+    "test": "node test.js",
+    "test-browser": "PORT=7357 app-server"
+  },
+  "devDependencies": {
+    "app-server": "github:jessetane/app-server#4.1.1"
+  },
+  "repository": "https://github.com/jessetane/tap6",
+  "license": "MIT"
+}

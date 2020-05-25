@@ -18,8 +18,8 @@ tap('this is a test', t => {
 ```
 
 ## Prior art
-http://testanything.org/
-https://github.com/tapjs/node-tap
+http://testanything.org/  
+https://github.com/tapjs/node-tap  
 https://github.com/substack/tape
 
 ## License

@@ -7,6 +7,15 @@ class Tester {
     this.complete = false
   }
 
+  _next () {
+    this.executed++
+    if (this.planned !== 0) {
+      if (this.executed >= this.planned) {
+        this.end()
+      }
+    }
+  }
+
   plan (n) {
     this.planned = n
   }
@@ -21,23 +30,15 @@ class Tester {
     }
   }
 
-  next () {
-    this.executed++
-    if (this.planned !== 0) {
-      if (this.executed >= this.planned) {
-        this.end()
-      }
-    }
-  }
 
   pass (message = '(unnamed assert)') {
     pass(message)
-    this.next()
+    this._next()
   }
 
   fail (message = '(unnamed assert)') {
     fail(message, { operator: 'fail' })
-    this.next()
+    this._next()
   }
 
   ok (actual, message = 'should be truthy') {
@@ -50,7 +51,7 @@ class Tester {
         actual
       })
     }
-    this.next()
+    this._next()
   }
 
   notOk (actual, message = 'should be falsy') {
@@ -63,7 +64,7 @@ class Tester {
         actual
       })
     }
-    this.next()
+    this._next()
   }
 
   equal (expected, actual, message = 'should be strictly equal') {
@@ -76,7 +77,7 @@ class Tester {
         actual
       })
     }
-    this.next()
+    this._next()
   }
 
   notEqual (expected, actual, message = 'should not be strictly equal') {
@@ -89,7 +90,7 @@ class Tester {
         actual
       })
     }
-    this.next()
+    this._next()
   }
 }
 

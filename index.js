@@ -91,6 +91,46 @@ class Tester {
     }
     this._next()
   }
+
+  _arrayEqual (expected, actual) {
+    var e = Array.from(expected)
+    var a = Array.from(actual)
+    if (e.length !== a.length) {
+      return false
+    }
+    for (var i = 0; i < e.length; i++) {
+      if (a[i] !== e[i]) {
+        return false
+      }
+    }
+    return true
+  }
+
+  arrayEqual (expected, actual, message = 'length and contents should be strictly equal') {
+    if (this._arrayEqual(expected, actual)) {
+      pass(message)
+    } else {
+      fail(message, {
+        operator: 'arrayEqual',
+        expected,
+        actual
+      })
+    }
+    this._next()
+  }
+
+  notArrayEqual (expected, actual, message = 'length or contents should not be strictly equal') {
+    if (!this._arrayEqual(expected, actual)) {
+      pass(message)
+    } else {
+      fail(message, {
+        operator: 'notArrayEqual',
+        expected,
+        actual
+      })
+    }
+    this._next()
+  }
 }
 
 function out () {

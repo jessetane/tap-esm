@@ -65,6 +65,30 @@ ok 7 should not be strictly equal
 `
   if (actual !== expected) fail('notEqual', expected)
   pass()
+})
+
+tap('arrayEqual', t => {
+  t.plan(1)
+  t.arrayEqual([1,2,3], new Uint8Array([1,2,3]))
+  var expected = `# arrayEqual
+ok 8 length and contents should be strictly equal
+`
+  if (actual !== expected) fail('arrayEqual', expected)
+  pass()
+})
+
+tap('notArrayEqual', t => {
+  t.plan(3)
+  t.notArrayEqual([1,2,3], new Uint8Array([1,2,4]))
+  t.notArrayEqual([1,2,3], new Uint8Array([1,2,3,4]))
+  t.notArrayEqual([1,2,3,4], new Uint8Array([1,2,3]))
+  var expected = `# notArrayEqual
+ok 9 length or contents should not be strictly equal
+ok 10 length or contents should not be strictly equal
+ok 11 length or contents should not be strictly equal
+`
+  if (actual !== expected) fail('notArrayEqual', expected)
+  pass()
   complete = t
 })
 
@@ -73,9 +97,9 @@ tap.onFinish = err => {
   if (err.message !== '>= 1 test failed') throw new Error('tap.onFinish expected an error')
   // summary output
   var expected = `
-1..7
-# tests 7
-# pass 6
+1..11
+# tests 11
+# pass 10
 # fail 1
 
 `

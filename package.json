@@ -1,8 +1,8 @@
 {
-  "name": "tap6",
+  "name": "tap-esm",
   "version": "1.0.0",
   "type": "module",
-  "description": "TAP for es6",
+  "description": "TAP for es modules",
   "scripts": {
     "test": "node test.js",
     "test-browser": "PORT=7357 app-server"
@@ -10,6 +10,6 @@
   "devDependencies": {
     "app-server": "github:jessetane/app-server#4.1.1"
   },
-  "repository": "https://github.com/jessetane/tap6",
+  "repository": "https://github.com/jessetane/tap-esm",
   "license": "MIT"
 }

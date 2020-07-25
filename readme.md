@@ -17,6 +17,38 @@ tap('this is a test', t => {
 })
 ```
 
+## API
+
+### `t.plan(n)`
+Declares that `n` assertions should be run. `t.end()` will be called automatically after the nth assertion. If there are any more assertions after the nth, or after `t.end()` is called, they will generate errors.
+
+### `t.end()`
+Declares the end of a test explicitly.
+
+### `t.pass([message])`
+Generates a passing assertion with optional message.
+
+### `t.fail([message])`
+Generates a failing assertion.
+
+### `t.ok(actual[, message])`
+Asserts that `value` is truthy.
+
+### `t.notOk(value[, message])`
+Inverse of `t.ok()`.
+
+### `t.equal(expected, actual[, message])`
+Asserts that `expected` and `actual` are strictly equal.
+
+### `t.notEqual(expected, actual[, message])`
+Inverse of `t.equal()`.
+
+### `t.arrayEqual(expected, actual[, message])`
+Wraps `expected` and `actual` with `Array.from()` and then asserts the resulting lengths and all contained items are strictly equal. Note that this method does not recurse nested arrays.
+
+### `t.notArrayEqual(expected, actual[, message])`
+Inverse of `t.arrayEqual()`.
+
 ## Prior art
 http://testanything.org/  
 https://github.com/tapjs/node-tap  

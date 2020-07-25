@@ -30,7 +30,6 @@ class Tester {
     }
   }
 
-
   pass (message = '(unnamed assert)') {
     pass(message)
     this._next()
@@ -169,4 +168,3 @@ var running = false
 var complete = false
 
 export default tap
-

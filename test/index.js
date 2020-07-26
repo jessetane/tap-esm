@@ -1,4 +1,4 @@
-import tap from './index.js'
+import tap from 'tap-esm'
 
 tap('pass', t =>  {
   t.pass()

@@ -9,7 +9,7 @@ Minimal API coverage, very similar to node-tap and tape but does not attempt to 
 
 ## Example
 ```javascript
-import tap from 'tap-esm/index.js'
+import tap from 'tap-esm'
 
 tap('this is a test', t => {
   t.plan(1)

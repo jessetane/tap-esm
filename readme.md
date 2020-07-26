@@ -31,7 +31,7 @@ Generates a passing assertion with optional message.
 ### `t.fail([message])`
 Generates a failing assertion.
 
-### `t.ok(actual[, message])`
+### `t.ok(value[, message])`
 Asserts that `value` is truthy.
 
 ### `t.notOk(value[, message])`

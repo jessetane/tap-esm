@@ -40,27 +40,27 @@ class Tester {
     this._next()
   }
 
-  ok (actual, message = 'should be truthy') {
-    if (actual) {
+  ok (value, message = 'should be truthy') {
+    if (value) {
       pass(message)
     } else {
       fail(message, {
         operator: 'ok',
         expected: true,
-        actual
+        actual: value
       })
     }
     this._next()
   }
 
-  notOk (actual, message = 'should be falsy') {
-    if (!actual) {
+  notOk (value, message = 'should be falsy') {
+    if (!value) {
       pass(message)
     } else {
       fail(message, {
         operator: 'notOk',
         expected: false,
-        actual
+        actual: value
       })
     }
     this._next()

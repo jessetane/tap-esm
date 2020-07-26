@@ -28,7 +28,6 @@ tap('ok', t => {
   t.plan(2)
   t.ok(1)
   t.ok(2)
-  //t.ok(3)
   var expected = `# ok
 ok 3 should be truthy
 ok 4 should be truthy

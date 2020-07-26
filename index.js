@@ -66,8 +66,8 @@ class Tester {
     this._next()
   }
 
-  equal (expected, actual, message = 'should be strictly equal') {
-    if (expected === actual) {
+  equal (actual, expected, message = 'should be strictly equal') {
+    if (actual === expected) {
       pass(message)
     } else {
       fail(message, {
@@ -79,8 +79,8 @@ class Tester {
     this._next()
   }
 
-  notEqual (expected, actual, message = 'should not be strictly equal') {
-    if (expected !== actual) {
+  notEqual (actual, expected, message = 'should not be strictly equal') {
+    if (actual !== expected) {
       pass(message)
     } else {
       fail(message, {
@@ -92,10 +92,10 @@ class Tester {
     this._next()
   }
 
-  _arrayEqual (expected, actual) {
-    var e = Array.from(expected)
+  _arrayEqual (actual, expected) {
     var a = Array.from(actual)
-    if (e.length !== a.length) {
+    var e = Array.from(expected)
+    if (a.length !== e.length) {
       return false
     }
     for (var i = 0; i < e.length; i++) {
@@ -106,8 +106,8 @@ class Tester {
     return true
   }
 
-  arrayEqual (expected, actual, message = 'length and contents should be strictly equal') {
-    if (this._arrayEqual(expected, actual)) {
+  arrayEqual (actual, expected, message = 'length and contents should be strictly equal') {
+    if (this._arrayEqual(actual, expected)) {
       pass(message)
     } else {
       fail(message, {
@@ -119,8 +119,8 @@ class Tester {
     this._next()
   }
 
-  notArrayEqual (expected, actual, message = 'length or contents should not be strictly equal') {
-    if (!this._arrayEqual(expected, actual)) {
+  notArrayEqual (actual, expected, message = 'length or contents should not be strictly equal') {
+    if (!this._arrayEqual(actual, expected)) {
       pass(message)
     } else {
       fail(message, {

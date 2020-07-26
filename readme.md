@@ -37,16 +37,16 @@ Asserts that `value` is truthy.
 ### `t.notOk(value[, message])`
 Inverse of `t.ok()`.
 
-### `t.equal(expected, actual[, message])`
-Asserts that `expected` and `actual` are strictly equal.
+### `t.equal(actual, expected[, message])`
+Asserts that `actual` and `expected` are strictly equal.
 
-### `t.notEqual(expected, actual[, message])`
+### `t.notEqual(actual, expected[, message])`
 Inverse of `t.equal()`.
 
-### `t.arrayEqual(expected, actual[, message])`
-Wraps `expected` and `actual` with `Array.from()` and then asserts the resulting lengths and all contained items are strictly equal. Note that this method does not recurse nested arrays.
+### `t.arrayEqual(actual, expected[, message])`
+Wraps `actual` and `expected` with `Array.from()` and then asserts the resulting lengths and all contained items are strictly equal. Note that this method does not recurse nested arrays.
 
-### `t.notArrayEqual(expected, actual[, message])`
+### `t.notArrayEqual(actual, expected[, message])`
 Inverse of `t.arrayEqual()`.
 
 ## Prior art

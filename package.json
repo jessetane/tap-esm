@@ -1,6 +1,6 @@
 {
   "name": "tap-esm",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "TAP for es modules",
   "type": "module",
   "exports": {

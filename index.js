@@ -46,8 +46,8 @@ class Tester {
     } else {
       fail(message, {
         operator: 'ok',
-        expected: true,
-        actual: value
+        actual: value,
+        expected: true
       })
     }
     this._next()
@@ -59,8 +59,8 @@ class Tester {
     } else {
       fail(message, {
         operator: 'notOk',
-        expected: false,
-        actual: value
+        actual: value,
+        expected: false
       })
     }
     this._next()
@@ -72,8 +72,8 @@ class Tester {
     } else {
       fail(message, {
         operator: 'equal',
-        expected,
-        actual
+        actual,
+        expected
       })
     }
     this._next()
@@ -85,8 +85,8 @@ class Tester {
     } else {
       fail(message, {
         operator: 'notEqual',
-        expected,
-        actual
+        actual,
+        expected
       })
     }
     this._next()
@@ -112,8 +112,8 @@ class Tester {
     } else {
       fail(message, {
         operator: 'arrayEqual',
-        expected,
-        actual
+        actual,
+        expected
       })
     }
     this._next()
@@ -125,8 +125,8 @@ class Tester {
     } else {
       fail(message, {
         operator: 'notArrayEqual',
-        expected,
-        actual
+        actual,
+        expected
       })
     }
     this._next()

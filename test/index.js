@@ -88,6 +88,28 @@ ok 11 length or contents should not be strictly equal
 `
   if (actual !== expected) fail('notArrayEqual', expected)
   pass()
+})
+
+tap('throws', t => {
+  t.plan(2)
+  t.throws(function () { throw new TypeError() }, 'should throw TypeError')
+  t.throws(function () { throw new RangeError() }, RangeError)
+  var expected = `# throws
+ok 12 should throw TypeError
+ok 13 should throw
+`
+  if (actual !== expected) fail('throws', expected)
+  pass()
+})
+
+tap('doesNotThrow', t => {
+  t.plan(1)
+  t.doesNotThrow(function () {})
+  var expected = `# doesNotThrow
+ok 14 should not throw
+`
+  if (actual !== expected) fail('doesNotThrow', expected)
+  pass()
   complete = t
 })
 
@@ -96,9 +118,9 @@ tap.onFinish = err => {
   if (err.message !== '>= 1 test failed') throw new Error('tap.onFinish expected an error')
   // summary output
   var expected = `
-1..11
-# tests 11
-# pass 10
+1..14
+# tests 14
+# pass 13
 # fail 1
 
 `

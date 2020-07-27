@@ -131,6 +131,48 @@ class Tester {
     }
     this._next()
   }
+
+  throws (fn, expected, message = 'should throw') {
+    if (typeof expected === 'string') {
+      message = expected
+      expected = undefined
+    }
+    var actual = undefined
+    try {
+      fn()
+    } catch (err) {
+      actual = err
+    }
+    if (actual && (!expected || actual instanceof expected)) {
+      pass(message)
+    } else {
+      fail(message, {
+        operator: 'throws',
+        actual,
+        expected
+      })
+    }
+    this._next()
+  }
+
+  doesNotThrow (fn, message = 'should not throw') {
+    var actual = undefined
+    try {
+      fn()
+    } catch (err) {
+      actual = err
+    }
+    if (!actual) {
+      pass(message)
+    } else {
+      fail(message, {
+        operator: 'doesNotThrow',
+        actual,
+        expected
+      })
+    }
+    this._next()
+  }
 }
 
 function out () {

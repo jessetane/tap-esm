@@ -1,12 +1,13 @@
 {
   "name": "tap-esm",
   "version": "1.2.0",
+  "description": "TAP for es modules",
   "type": "module",
   "exports": {
     ".": "./index.js",
     "./": "./"
   },
-  "description": "TAP for es modules",
+  "bin": "./cli.js",
   "scripts": {
     "test": "node test",
     "test-browser": "ecstatic --cache no-cache --port 7357 test"

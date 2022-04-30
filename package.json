@@ -5,15 +5,15 @@
   "type": "module",
   "exports": {
     ".": "./index.js",
-    "./": "./"
-  },
-  "bin": {
-    "tap": "./cli.js",
-    "tape": "./cli.js"
+    "./*": "./*"
   },
   "scripts": {
     "test": "node test",
     "test-browser": "ecstatic --cache no-cache --port 7357 test"
+  },
+  "bin": {
+    "tap": "./cli.js",
+    "tape": "./cli.js"
   },
   "devDependencies": {
     "ecstatic": "^4.1.4"

@@ -210,7 +210,12 @@ function run () {
       out(`TAP version 13`)
     }
     out(`# ${tester.name}`)
-    tester.test(tester)
+    const p = tester.test(tester)
+    if (tester.planned === 0) {
+      if (p && p.then && p.catch) {
+        p.then(() => tester.end())
+      }
+    }
   } else {
     complete = true
     var total = passed + failed

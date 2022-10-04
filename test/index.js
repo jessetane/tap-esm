@@ -151,7 +151,7 @@ tap.onFinish = err => {
   } catch (err) {
     if (err.message !== 'already complete') throw err
   }
-  console.log('all tests passed')
+  log('all tests passed')
 }
 
 var complete = null
@@ -161,13 +161,21 @@ tap.out = function (str) {
 }
 
 function pass () {
-  console.log(actual.slice(0, -1))
+  log(actual.slice(0, -1))
   actual = ''
 }
 
 function fail (name, expected) {
-  console.log('expected:', expected)
-  console.log('actual:', actual)
+  log('expected:', expected)
+  log('actual:', actual)
   throw new Error(name)
 }
 
+function log () {
+  if (typeof window !== 'undefined') {
+    const line = document.createElement('div')
+    line.innerText = Array.from(arguments).join(' ')
+    document.body.appendChild(line)
+  }
+  console.log(...arguments)
+}

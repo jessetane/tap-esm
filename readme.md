@@ -16,7 +16,7 @@ tap('this is a test', t => {
   t.equal('a', 'b')
 })
 
-tap('this is an unplanned async tests that ends automatically', async t => {
+tap('this is an unplanned async test that ends automatically', async t => {
   t.ok(true)
   t.notOk(false)
 })

@@ -113,14 +113,25 @@ ok 14 should not throw
   complete = t
 })
 
+tap('unplanned async', async t => {
+  t.ok(1)
+  t.ok(2)
+  var expected = `# unplanned async
+ok 15 should be truthy
+ok 16 should be truthy
+`
+  if (actual !== expected) fail('unplanned async', expected)
+  pass()
+})
+
 tap.onFinish = err => {
   // at least one test failed, so onFinish should be passed an error
   if (err.message !== '>= 1 test failed') throw new Error('tap.onFinish expected an error')
   // summary output
   var expected = `
-1..14
-# tests 14
-# pass 13
+1..16
+# tests 16
+# pass 15
 # fail 1
 
 `
